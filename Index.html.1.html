@@ -1,0 +1,498 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#fff;color:#000}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Talta Shemal Store</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;900&display=swap" rel="stylesheet">
+<script>document.documentElement.lang="ar";document.documentElement.dir="rtl";</script>
+<style>
+:root{color-scheme:dark;
+  --red:#d8112a; --red-dark:#a30b1e; --black:#0e0e10; --ink:#17171a;
+  --card:#1d1d21; --line:#2a2a30; --white:#fff; --muted:#a8a8b3; --gold:#f2b632;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:'Cairo',sans-serif;background:var(--black);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font-family:inherit;cursor:pointer;border:0}
+.container{width:min(1180px,92%);margin-inline:auto}
+
+/* top bar */
+.topbar{background:var(--red);text-align:center;font-size:.85rem;font-weight:600;padding:6px 10px}
+
+/* header */
+body::before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);z-index:60;background:var(--black)}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:50;background:rgba(14,14,16,.92);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:68px;gap:16px}
+.logo{font-weight:900;font-size:1.25rem;letter-spacing:.5px;display:flex;align-items:center;gap:10px}
+.logo i{width:38px;height:38px;border-radius:10px;background:linear-gradient(135deg,var(--red),var(--red-dark));display:grid;place-items:center;font-style:normal;font-size:1.1rem;box-shadow:0 4px 14px rgba(216,17,42,.45)}
+.logo i{overflow:hidden}
+.logo small{display:block;font-size:.65rem;color:var(--muted);font-weight:600;letter-spacing:1.5px;margin-top:-4px}
+nav ul{display:flex;gap:26px;list-style:none;font-weight:600}
+nav a{color:#d5d5dc;transition:.2s}
+nav a:hover{color:var(--red)}
+.cart-btn{position:relative;background:var(--card);border:1px solid var(--line);color:#fff;padding:8px 16px;border-radius:999px;font-weight:700;display:flex;gap:8px;align-items:center;transition:.2s}
+.cart-btn:hover{border-color:var(--red)}
+.cart-count{background:var(--red);border-radius:999px;min-width:22px;height:22px;display:grid;place-items:center;font-size:.75rem}
+
+/* hero */
+.hero{position:relative;overflow:hidden;padding:70px 0 90px;background:
+  radial-gradient(900px 400px at 85% 10%,rgba(216,17,42,.35),transparent 60%),
+  radial-gradient(600px 300px at 0% 100%,rgba(242,182,50,.12),transparent 60%),var(--black)}
+.hero::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(115deg,transparent 0 38px,rgba(255,255,255,.025) 38px 76px)}
+.hero-grid{position:relative;display:grid;grid-template-columns:1.1fr .9fr;gap:30px;align-items:center}
+.tag{display:inline-block;background:rgba(216,17,42,.15);color:#ff5b6e;border:1px solid rgba(216,17,42,.5);padding:4px 14px;border-radius:999px;font-weight:700;font-size:.85rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,5.5vw,4.2rem);line-height:1.15;font-weight:900}
+.hero h1 span{color:var(--red)}
+.hero p{color:var(--muted);font-size:1.1rem;margin:18px 0 30px;max-width:520px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 28px;border-radius:12px;font-weight:700;font-size:1rem;transition:.2s}
+.btn-red{background:var(--red);color:#fff;box-shadow:0 8px 24px rgba(216,17,42,.4)}
+.btn-red:hover{background:var(--red-dark);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:#fff;border:1px solid #444;margin-inline-start:10px}
+.btn-ghost:hover{border-color:#fff}
+.hero-art{display:grid;place-items:center}
+.hero-art svg{width:min(380px,90%);filter:drop-shadow(0 30px 40px rgba(216,17,42,.35));animation:float 5s ease-in-out infinite}
+@keyframes float{50%{transform:translateY(-14px) rotate(-2deg)}}
+
+/* perks */
+.perks{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:-38px;position:relative;z-index:2}
+.perk{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}
+.perk b{display:block;font-size:1.6rem}
+.perk span{font-weight:600;font-size:.92rem;color:#d7d7de}
+
+/* sections */
+section{padding:70px 0}
+.sec-head{text-align:center;margin-bottom:34px}
+.sec-head h2{font-size:2rem;font-weight:900}
+.sec-head h2 span{color:var(--red)}
+.sec-head p{color:var(--muted)}
+.filters{display:flex;flex-wrap:wrap;gap:10px;justify-content:center;margin-bottom:34px}
+.chip{background:var(--card);color:#d5d5dc;border:1px solid var(--line);padding:8px 20px;border-radius:999px;font-weight:700;transition:.2s}
+.chip.active,.chip:hover{background:var(--red);border-color:var(--red);color:#fff}
+
+/* products */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(250px,1fr));gap:22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.25s;display:flex;flex-direction:column}
+.card:hover{transform:translateY(-6px);border-color:var(--red);box-shadow:0 18px 40px rgba(0,0,0,.5)}
+.thumb{position:relative;aspect-ratio:1/1;background:radial-gradient(circle at 50% 40%,#2c2c33,#16161a);display:grid;place-items:center;padding:22px}
+.thumb svg{width:86%;transition:.3s}
+.card:hover .thumb svg{transform:scale(1.06) rotate(-2deg)}
+.badge{position:absolute;top:12px;right:12px;background:var(--gold);color:#111;font-weight:800;font-size:.75rem;padding:3px 12px;border-radius:999px}
+.badge.new{background:var(--red);color:#fff}
+.info{padding:16px 18px 20px;display:flex;flex-direction:column;gap:6px;flex:1}
+.info small{color:var(--muted);font-weight:600}
+.info h3{font-size:1.05rem;font-weight:700}
+.price{display:flex;align-items:baseline;gap:10px;margin-top:auto}
+.price b{font-size:1.25rem;color:#fff}
+.price s{color:var(--muted);font-size:.9rem}
+.sizes{display:flex;gap:6px;margin:6px 0 10px;flex-wrap:wrap}
+.sizes button{background:#26262c;color:#ddd;border:1px solid #34343c;width:36px;height:30px;border-radius:8px;font-weight:700;font-size:.8rem}
+.sizes button.sel{background:var(--red);border-color:var(--red);color:#fff}
+.add{background:#fff;color:#111;padding:10px;border-radius:12px;font-weight:800;transition:.2s}
+.add:hover{background:var(--red);color:#fff}
+
+/* banner */
+.banner{background:linear-gradient(120deg,var(--red-dark),var(--red));border-radius:26px;padding:46px 40px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;position:relative;overflow:hidden}
+.banner::after{content:"٣ شمال";position:absolute;left:-10px;bottom:-40px;font-size:9rem;font-weight:900;color:rgba(0,0,0,.14);line-height:1}
+.banner h2{font-size:2rem;font-weight:900}
+.banner p{opacity:.9}
+.banner .btn{background:#fff;color:var(--red-dark);position:relative;z-index:1}
+
+/* about + contact */
+.about{display:grid;grid-template-columns:1fr 1fr;gap:34px;align-items:center}
+.about p{color:var(--muted);margin-bottom:14px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:22px;text-align:center}
+.stat b{font-size:1.9rem;color:var(--red);display:block}
+form.contact{display:grid;gap:12px;max-width:560px;margin-inline:auto}
+input,textarea{width:100%;background:var(--card);border:1px solid var(--line);color:#fff;padding:13px 16px;border-radius:12px;font-family:inherit;font-size:1rem}
+input:focus,textarea:focus{outline:0;border-color:var(--red)}
+
+footer{border-top:1px solid var(--line);padding:34px 0;text-align:center;color:var(--muted);font-size:.9rem}
+footer .disc{max-width:720px;margin:10px auto 0;font-size:.8rem;opacity:.75}
+
+/* cart drawer */
+.overlay{position:fixed;inset:0;background:rgba(0,0,0,.6);opacity:0;pointer-events:none;transition:.3s;z-index:90}
+.overlay.open{opacity:1;pointer-events:auto}
+.drawer{position:fixed;top:0;left:0;height:100%;width:min(420px,100%);background:#141417;border-right:1px solid var(--line);z-index:100;transform:translateX(-100%);transition:.35s;display:flex;flex-direction:column}
+.drawer.open{transform:none}
+.drawer header{position:static;display:flex;justify-content:space-between;align-items:center;padding:18px 20px;background:transparent}
+.drawer h3{font-size:1.2rem}
+.x{background:var(--card);color:#fff;width:36px;height:36px;border-radius:10px;font-size:1.1rem}
+.items{flex:1;overflow:auto;padding:14px 20px;display:grid;gap:12px;align-content:start}
+.item{display:grid;grid-template-columns:64px 1fr auto;gap:12px;align-items:center;background:var(--card);border-radius:14px;padding:10px}
+.item .mini{background:#232329;border-radius:10px;padding:6px}
+.item .mini svg{width:100%}
+.item h4{font-size:.92rem}
+.item small{color:var(--muted)}
+.qty{display:flex;align-items:center;gap:8px;margin-top:4px}
+.qty button{width:26px;height:26px;border-radius:8px;background:#2b2b33;color:#fff;font-weight:800}
+.rm{background:none;color:#ff6b7a;font-size:.85rem}
+.empty{text-align:center;color:var(--muted);padding:50px 10px}
+.foot{padding:18px 20px;border-top:1px solid var(--line);display:grid;gap:12px}
+.total{display:flex;justify-content:space-between;font-weight:800;font-size:1.15rem}
+.wa{background:#25d366;color:#08240f;padding:13px;border-radius:12px;font-weight:800;text-align:center;font-size:1rem}
+.wa:disabled{opacity:.4;cursor:not-allowed}
+
+/* toast */
+.toast{position:fixed;bottom:24px;left:50%;transform:translate(-50%,120px);background:#fff;color:#111;font-weight:700;padding:12px 22px;border-radius:999px;transition:.35s;z-index:200}
+.toast.show{transform:translate(-50%,0)}
+
+@media(max-width:860px){
+  nav ul{display:none}
+  .hero-grid,.about{grid-template-columns:1fr}
+  .hero-art{order:-1}
+  .hero-art svg{width:220px}
+  .perks{grid-template-columns:repeat(2,1fr)}
+}
+</style>
+
+
+<div class="topbar">🚚 شحن لكل محافظات مصر • الدفع عند الاستلام • خصم ١٠٪ على الطلب الأول بكود TALTA10</div>
+
+<header>
+  <div class="container nav">
+    <a href="#top" class="logo">
+      <i>T</i>
+      <div>TALTA SHEMAL<small>STORE • 74</small></div>
+    </a>
+    <nav>
+      <ul>
+        <li><a href="#shop">المنتجات</a></li>
+        <li><a href="#offer">العروض</a></li>
+        <li><a href="#about">عنّا</a></li>
+        <li><a href="#contact">تواصل معنا</a></li>
+      </ul>
+    </nav>
+    <button class="cart-btn" id="openCart">🛒 السلة <span class="cart-count" id="count">0</span></button>
+  </div>
+</header>
+
+<main id="top">
+<!-- HERO -->
+<div class="hero">
+  <div class="container hero-grid">
+    <div>
+      <div id="heroLogo"></div>
+      <span class="tag">🔴 تشكيلة جديدة لجمهور الأهلي</span>
+      <h1>اِلبس <span>حبّك</span><br>للنادي الأهلي</h1>
+      <p>تيشرتات، هوديز، جواكيت وإكسسوارات بتخليك في المدرج وفي الشارع تفتخر بألوانك. جودة عالية وتصاميم مميزة.</p>
+      <a href="#shop" class="btn btn-red">تسوّق دلوقتي ←</a>
+      <a href="#offer" class="btn btn-ghost">شوف العروض</a>
+    </div>
+    <div class="hero-art" id="heroArt"></div>
+  </div>
+</div>
+
+<div class="container perks">
+  <div class="perk"><b>🚚</b><span>توصيل سريع</span></div>
+  <div class="perk"><b>💵</b><span>الدفع عند الاستلام</span></div>
+  <div class="perk"><b>🔁</b><span>استبدال خلال ١٤ يوم</span></div>
+  <div class="perk"><b>⭐</b><span>خامات مضمونة</span></div>
+</div>
+
+<!-- SHOP -->
+<section id="shop">
+  <div class="container">
+    <div class="sec-head">
+      <h2>منتجات <span>المتجر</span></h2>
+      <p>اختار القسم واللون والمقاس وكمّل الطلب على واتساب</p>
+    </div>
+    <div class="filters" id="filters"></div>
+    <div class="grid" id="grid"></div>
+  </div>
+</section>
+
+<!-- OFFER -->
+<section id="offer" style="padding-top:0">
+  <div class="container">
+    <div class="banner">
+      <div>
+        <h2>عرض الموسم 🔥</h2>
+        <p>اشتري هودي + تيشيرت واستفيد بخصم ١٥٪ على الطلب كله</p>
+      </div>
+      <a href="#shop" class="btn">استفيد بالعرض</a>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" style="padding-top:20px">
+  <div class="container about">
+    <div>
+      <div class="sec-head" style="text-align:right;margin-bottom:14px"><h2>إحنا <span>Talta Shemal</span></h2></div>
+      <p>متجر بدأ من مشجعين لمشجعين. هدفنا نوفرلك ملابس وإكسسوارات بجودة عالية وسعر مناسب علشان تعبّر عن حبك للأهلي بأحسن شكل.</p>
+      <p>كل منتج بنختاره بعناية، وفريقنا متواجد دايمًا للرد على استفساراتك وتأكيد طلبك.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>+٥٠٠</b>عميل سعيد</div>
+      <div class="stat"><b>٢٧</b>محافظة نوصلها</div>
+      <div class="stat"><b>٤.٩★</b>تقييم العملاء</div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" style="padding-top:20px">
+  <div class="container">
+    <div class="sec-head"><h2>تواصل <span>معنا</span></h2><p>اكتب رسالتك وهتتحوّل لواتساب مباشرة</p></div>
+    <form class="contact" id="contactForm">
+      <input id="cName" placeholder="الاسم" required>
+      <textarea id="cMsg" rows="4" placeholder="رسالتك" required></textarea>
+      <button class="btn btn-red" type="submit" style="justify-content:center">إرسال على واتساب</button>
+    </form>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container">
+    <div style="font-weight:800;color:#fff">TALTA SHEMAL STORE • 74</div>
+    <div>© 2026 جميع الحقوق محفوظة</div>
+    <div class="disc">متجر مستقل للمشجعين، وليس المتجر الرسمي للنادي الأهلي. أسماء وشعارات الأندية ملك لأصحابها. هذا الموقع نموذج تجريبي لمشروع جامعي ولا يبيع منتجات فعلية.</div>
+  </div>
+</footer>
+
+<!-- CART -->
+<div class="overlay" id="overlay"></div>
+<aside class="drawer" id="drawer">
+  <header><h3>🛒 سلة المشتريات</h3><button class="x" id="closeCart">✕</button></header>
+  <div class="items" id="items"></div>
+  <div class="foot">
+    <div class="total"><span>الإجمالي</span><span id="total">0 ج.م</span></div>
+    <button class="wa" id="checkout">إتمام الطلب على واتساب</button>
+  </div>
+</aside>
+<div class="toast" id="toast">تمت الإضافة للسلة ✅</div>
+
+<script>
+/* ============ إعدادات سهلة التعديل ============ */
+const WHATSAPP = "01100878422";   // غيّر الرقم برقمك (بدون + أو أصفار زيادة)
+const CURRENCY = "ج.م";
+const LOGO = "";    // حط ملف الشعار هنا (png أو svg)
+
+/* لو عندك صورة حقيقية للمنتج حط رابطها في img: "images/اسم.jpg" وهتظهر بدل الرسمة */
+const PRODUCTS = [
+  {id:1, name:"تيشيرت المدرج الأحمر",   cat:"تيشرتات", type:"tee",    c:["#d8112a","#ffffff"], price:550,  old:700,  badge:"الأكثر مبيعًا"},
+  {id:2, name:"تيشيرت الأبيض الكلاسيك", cat:"تيشرتات", type:"tee",    c:["#f2f2f2","#d8112a"], price:520,  old:null, badge:""},
+  {id:3, name:"تيشيرت الأسود ستريت",    cat:"تيشرتات", type:"tee",    c:["#16161a","#d8112a"], price:580,  old:null, badge:"جديد"},
+  {id:4, name:"هودي الشتاء الأحمر",     cat:"هوديز",   type:"hoodie", c:["#c20f25","#ffffff"], price:1150, old:1350, badge:"خصم"},
+  {id:5, name:"هودي أسود بخط أحمر",     cat:"هوديز",   type:"hoodie", c:["#1b1b20","#d8112a"], price:1200, old:null, badge:"جديد"},
+  {id:6, name:"هودي رمادي هيذر",        cat:"هوديز",   type:"hoodie", c:["#6f6f78","#d8112a"], price:1100, old:null, badge:""},
+  {id:7, name:"جاكيت التراك الأحمر",    cat:"جواكيت",  type:"jacket", c:["#d8112a","#f2f2f2"], price:1450, old:1700, badge:"خصم"},
+  {id:8, name:"جاكيت بومبر أسود",       cat:"جواكيت",  type:"jacket", c:["#141418","#d8112a"], price:1650, old:null, badge:"جديد"},
+  {id:9, name:"إيشارب المشجعين",        cat:"إكسسوارات", type:"scarf", c:["#d8112a","#ffffff"], price:250,  old:null, badge:""},
+  {id:10,name:"كاب الأهلاوي",           cat:"إكسسوارات", type:"cap",   c:["#d8112a","#ffffff"], price:320,  old:400,  badge:"خصم"},
+  {id:11,name:"كاب أسود مطرز",          cat:"إكسسوارات", type:"cap",   c:["#16161a","#d8112a"], price:340,  old:null, badge:""},
+  {id:12,name:"إيشارب أسود وأحمر",      cat:"إكسسوارات", type:"scarf", c:["#16161a","#d8112a"], price:270,  old:null, badge:"جديد"},
+];
+const SIZES = {tee:["S","M","L","XL","XXL"], hoodie:["S","M","L","XL","XXL"], jacket:["M","L","XL","XXL"], scarf:["حر"], cap:["حر"]};
+
+/* ============ رسمات المنتجات (SVG بدون أي صور خارجية) ============ */
+function art(type,[main,acc],label="TALTA SHEMAL"){
+  const shade="rgba(0,0,0,.18)", stroke="rgba(0,0,0,.35)";
+  let body="";
+  if(type==="tee"){
+    body=`<path d="M62 34 L86 24 Q100 44 114 24 L138 34 L176 66 L156 92 L138 78 L138 176 L62 176 L62 78 L44 92 L24 66 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M86 24 Q100 44 114 24" fill="none" stroke="${acc}" stroke-width="5"/>
+    <path d="M24 66 L44 92 M176 66 L156 92" stroke="${acc}" stroke-width="6" stroke-linecap="round"/>
+    <rect x="62" y="150" width="76" height="26" fill="${shade}"/>
+    <text x="100" y="112" text-anchor="middle" font-size="13" font-weight="900" fill="${acc}" font-family="Cairo,sans-serif">${label}</text>
+    <text x="100" y="130" text-anchor="middle" font-size="9" font-weight="700" fill="${acc}" opacity=".8" font-family="Cairo,sans-serif">STORE • 74</text>`;
+  }
+  if(type==="hoodie"){
+    body=`<path d="M60 44 L84 30 L116 30 L140 44 L184 132 L158 144 L138 100 L138 178 L62 178 L62 100 L42 144 L16 132 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M78 30 Q100 -2 122 30 Q100 66 78 30Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M88 30 Q100 12 112 30 Q100 50 88 30Z" fill="${shade}"/>
+    <path d="M94 58 L92 84 M106 58 L108 84" stroke="${acc}" stroke-width="3" stroke-linecap="round"/>
+    <path d="M70 128 L130 128 L138 160 L62 160 Z" fill="${shade}" stroke="${stroke}"/>
+    <rect x="62" y="166" width="76" height="12" fill="${acc}" opacity=".9"/>
+    <path d="M16 132 L42 144 M184 132 L158 144" stroke="${acc}" stroke-width="7" stroke-linecap="round"/>
+    <text x="100" y="116" text-anchor="middle" font-size="11" font-weight="900" fill="${acc}" font-family="Cairo,sans-serif">TALTA SHEMAL</text>`;
+  }
+  if(type==="jacket"){
+    body=`<path d="M60 40 L84 26 L116 26 L140 40 L186 132 L160 146 L138 100 L138 178 L62 178 L62 100 L40 146 L14 132 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M84 26 L100 52 L116 26 L124 30 L100 62 L76 30 Z" fill="${acc}"/>
+    <path d="M100 52 L100 178" stroke="${stroke}" stroke-width="3"/>
+    <path d="M100 56 L100 176" stroke="${acc}" stroke-width="1.5" stroke-dasharray="3 4"/>
+    <path d="M62 80 L138 80" stroke="${acc}" stroke-width="5" opacity=".9"/>
+    <path d="M62 90 L138 90" stroke="${acc}" stroke-width="2" opacity=".7"/>
+    <rect x="62" y="168" width="76" height="10" fill="${acc}" opacity=".9"/>
+    <path d="M14 132 L40 146 M186 132 L160 146" stroke="${acc}" stroke-width="7" stroke-linecap="round"/>
+    <text x="118" y="116" font-size="8" font-weight="900" fill="${acc}" font-family="Cairo,sans-serif">TALTA</text>`;
+  }
+  if(type==="scarf"){
+    body=`<path d="M40 30 Q100 70 160 30 L172 54 Q100 100 28 54 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M70 62 L98 150 L142 140 L116 70 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    ${[0,1,2,3].map(i=>`<path d="M${64+i*10} ${70+i*20} L${108+i*10} ${60+i*20}" stroke="${acc}" stroke-width="7"/>`).join("")}
+    <path d="M98 150 L142 140" stroke="${acc}" stroke-width="3" stroke-dasharray="3 3"/>
+    <text x="100" y="52" text-anchor="middle" font-size="9" font-weight="900" fill="${acc}" font-family="Cairo,sans-serif" transform="rotate(4 100 52)">TALTA SHEMAL</text>`;
+  }
+  if(type==="cap"){
+    body=`<path d="M40 112 Q40 44 102 44 Q164 44 164 112 Z" fill="${main}" stroke="${stroke}" stroke-width="2"/>
+    <path d="M102 44 L102 112 M70 52 Q66 82 72 112 M134 52 Q138 82 132 112" stroke="${stroke}" stroke-width="1.5" fill="none"/>
+    <path d="M26 118 Q100 98 176 118 Q168 140 100 138 Q36 138 26 118Z" fill="${acc}" stroke="${stroke}" stroke-width="2"/>
+    <circle cx="102" cy="44" r="5" fill="${acc}"/>
+    <text x="102" y="92" text-anchor="middle" font-size="12" font-weight="900" fill="${acc}" font-family="Cairo,sans-serif">T S</text>`;
+  }
+  return `<svg viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="${type}">${body}</svg>`;
+}
+
+/* ============ الحالة ============ */
+let cart = {};
+try{ cart = JSON.parse(localStorage.getItem("talta_cart")||"{}"); }catch(e){}
+const sel = {};                // المقاس المختار لكل منتج
+let filter = "الكل";
+const $ = s => document.querySelector(s);
+const fmt = n => n.toLocaleString("ar-EG") + " " + CURRENCY;
+const save = () => { try{ localStorage.setItem("talta_cart", JSON.stringify(cart)); }catch(e){} };
+
+/* ============ الفلاتر والمنتجات ============ */
+const cats = ["الكل", ...new Set(PRODUCTS.map(p=>p.cat))];
+$("#filters").innerHTML = cats.map(c=>`<button class="chip ${c===filter?"active":""}" data-c="${c}">${c}</button>`).join("");
+$("#filters").onclick = e => {
+  const b = e.target.closest(".chip"); if(!b) return;
+  filter = b.dataset.c;
+  document.querySelectorAll(".chip").forEach(x=>x.classList.toggle("active", x===b));
+  renderGrid();
+};
+
+/* لكل منتج صورة بالاسم images/product-رقم.jpg (مثلاً product-1.jpg). لو الصورة مش موجودة بتظهر الرسمة البديلة تلقائيًا */
+
+
+function fixImg(el,id){
+  const p = PRODUCTS.find(x=>x.id==id);
+  const d = document.createElement("div");
+  d.style.width = "100%";
+  d.innerHTML = art(p.type,p.c);
+  el.replaceWith(d);
+}
+function thumb(p){
+  return p.img ? `<img src="${p.img}" alt="${p.name}" onerror="fixImg(this,${p.id})" style="width:100%;height:100%;object-fit:cover;border-radius:12px">` : art(p.type,p.c);
+}
+
+/* الشعار: لو الملف موجود بيظهر في الهيدر والهيرو، لو لأ بيفضل الحرف T */
+function applyLogo(){
+  if(!LOGO) return;
+  const im = new Image();
+  im.onload = () => {
+    document.querySelectorAll(".logo i").forEach(el=>{
+      el.innerHTML = `<img src="${LOGO}" alt="logo" style="width:100%;height:100%;object-fit:contain">`;
+      el.style.background = "none"; el.style.boxShadow = "none";
+    });
+    const h = $("#heroLogo");
+    h.innerHTML = `<img src="${LOGO}" alt="logo" style="height:96px;margin-bottom:14px">`;
+  };
+  im.src = LOGO;
+}
+
+function renderGrid(){
+  const list = PRODUCTS.filter(p => filter==="الكل" || p.cat===filter);
+  $("#grid").innerHTML = list.map(p=>{
+    const sizes = SIZES[p.type];
+    if(!sel[p.id]) sel[p.id] = sizes[Math.min(1,sizes.length-1)];
+    return `<article class="card">
+      <div class="thumb">
+        ${p.badge?`<span class="badge ${p.badge==="جديد"?"new":""}">${p.badge}</span>`:""}
+        ${thumb(p)}
+      </div>
+      <div class="info">
+        <small>${p.cat}</small>
+        <h3>${p.name}</h3>
+        <div class="sizes" data-id="${p.id}">
+          ${sizes.map(s=>`<button class="${sel[p.id]===s?"sel":""}" data-s="${s}" style="${s==="حر"?"width:auto;padding:0 12px":""}">${s}</button>`).join("")}
+        </div>
+        <div class="price"><b>${fmt(p.price)}</b>${p.old?`<s>${fmt(p.old)}</s>`:""}</div>
+        <button class="add" data-add="${p.id}">أضف للسلة</button>
+      </div>
+    </article>`;
+  }).join("");
+}
+$("#grid").onclick = e => {
+  const sz = e.target.closest(".sizes button");
+  if(sz){
+    const id = sz.parentElement.dataset.id;
+    sel[id] = sz.dataset.s;
+    sz.parentElement.querySelectorAll("button").forEach(b=>b.classList.toggle("sel", b===sz));
+    return;
+  }
+  const add = e.target.closest("[data-add]");
+  if(add){
+    const id = +add.dataset.add;
+    const key = id+"|"+sel[id];
+    cart[key] = (cart[key]||0)+1;
+    save(); renderCart(); toast("تمت الإضافة للسلة ✅");
+  }
+};
+
+/* ============ السلة ============ */
+function renderCart(){
+  const keys = Object.keys(cart);
+  const n = keys.reduce((a,k)=>a+cart[k],0);
+  $("#count").textContent = n;
+  let total = 0;
+  $("#items").innerHTML = keys.length ? keys.map(k=>{
+    const [id,size] = k.split("|");
+    const p = PRODUCTS.find(x=>x.id==id); if(!p) return "";
+    total += p.price*cart[k];
+    return `<div class="item">
+      <div class="mini">${thumb(p)}</div>
+      <div>
+        <h4>${p.name}</h4>
+        <small>المقاس: ${size} • ${fmt(p.price)}</small>
+        <div class="qty">
+          <button data-m="${k}">−</button><span>${cart[k]}</span><button data-p="${k}">+</button>
+        </div>
+      </div>
+      <button class="rm" data-r="${k}">حذف</button>
+    </div>`;
+  }).join("") : `<div class="empty">🛒<br>السلة فاضية.. ضيف منتجاتك المفضلة</div>`;
+  $("#total").textContent = fmt(total);
+  $("#checkout").disabled = !keys.length;
+}
+$("#items").onclick = e => {
+  const t = e.target;
+  if(t.dataset.p){ cart[t.dataset.p]++; }
+  else if(t.dataset.m){ if(--cart[t.dataset.m] <= 0) delete cart[t.dataset.m]; }
+  else if(t.dataset.r){ delete cart[t.dataset.r]; }
+  else return;
+  save(); renderCart();
+};
+const open = v => { $("#drawer").classList.toggle("open",v); $("#overlay").classList.toggle("open",v); };
+$("#openCart").onclick = ()=>open(true);
+$("#closeCart").onclick = ()=>open(false);
+$("#overlay").onclick = ()=>open(false);
+
+$("#checkout").onclick = () => {
+  let total = 0, lines = [];
+  Object.keys(cart).forEach(k=>{
+    const [id,size] = k.split("|");
+    const p = PRODUCTS.find(x=>x.id==id); if(!p) return;
+    total += p.price*cart[k];
+    lines.push(`• ${p.name} | مقاس ${size} | عدد ${cart[k]} | ${p.price*cart[k]} ${CURRENCY}`);
+  });
+  const msg = `أهلاً Talta Shemal Store 👋\nعايز أطلب:\n${lines.join("\n")}\n\nالإجمالي: ${total} ${CURRENCY}\n\nالاسم:\nالعنوان:\nرقم الموبايل:`;
+  openWA(msg);
+};
+
+/* ============ تواصل ============ */
+$("#contactForm").onsubmit = e => {
+  e.preventDefault();
+  const msg = `رسالة من ${$("#cName").value}:\n${$("#cMsg").value}`;
+  openWA(msg);
+};
+
+/* ============ أدوات ============ */
+function openWA(msg){
+  const a = document.createElement("a");
+  a.href = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(msg);
+  a.target = "_blank"; a.rel = "noopener";
+  document.body.appendChild(a); a.click(); a.remove();
+}
+let tt;
+function toast(t){ const el=$("#toast"); el.textContent=t; el.classList.add("show"); clearTimeout(tt); tt=setTimeout(()=>el.classList.remove("show"),1600); }
+
+/* تشغيل */
+$("#heroArt").innerHTML = art("hoodie",["#d8112a","#ffffff"]);
+renderGrid(); renderCart(); applyLogo();
+</script>
+
+</body></html>
